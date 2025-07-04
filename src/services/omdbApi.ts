@@ -2,7 +2,7 @@ import axios, { AxiosError } from 'axios';
 import { MovieSearchResponse, MovieDetail, FilterType } from '../types';
 
 const API_KEY = process.env.REACT_APP_OMDB_API_KEY || 'trilogy';
-const BASE_URL = 'http://www.omdbapi.com/';
+const BASE_URL = 'https://www.omdbapi.com/';
 const REQUEST_TIMEOUT = 8000;
 const MAX_RETRIES = 2;
 
