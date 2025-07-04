@@ -1,46 +1,238 @@
-# Getting Started with Create React App
+# Movie Search Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React application for searching movies and TV series using the OMDB API. Built with TypeScript, Material-UI, and Clean Architecture principles.
 
-## Available Scripts
+## 🎯 Challenge Requirements
 
-In the project directory, you can run:
+This project implements all required technical specifications:
 
-### `npm start`
+### ✅ Core Requirements
+- **React 18** with functional components and hooks
+- **TypeScript** for complete type safety
+- **OMDB API** integration for movie data
+- **Material-UI** for modern UI components
+- **Clean Architecture** implementation
+- **Error handling** and loading states
+- **Responsive design** for all screen sizes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### ✅ Technical Implementation
+- **Custom Hooks**: `useMovies`, `useDebounce`
+- **State Management**: Context API with useReducer
+- **API Layer**: Singleton pattern with caching and retry logic
+- **Domain Layer**: Business logic separation
+- **Component Architecture**: Reusable, typed components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+- **Real-time Search**: Debounced search with 800ms delay
+- **Advanced Filtering**: Search by movies, series, or both
+- **Smart Pagination**: Limited to 3 pages with exactly 12 items per page
+- **Dynamic Image Filtering**: Automatically removes broken images
+- **Responsive Design**: Adaptive grid layout for all screen sizes
+- **Error Recovery**: Retry mechanism with intelligent error handling
+- **Modern UI**: Dark theme with glassmorphism effects
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📁 Project Structure
 
-### `npm run build`
+```
+src/
+├── components/         # Reusable UI components
+│   ├── SearchBar.tsx  # Search input with filters
+│   ├── MovieList.tsx  # Results grid with pagination
+│   ├── MovieCard.tsx  # Individual movie cards
+│   ├── Pagination.tsx # Custom pagination component
+│   ├── Loader.tsx     # Loading spinner
+│   └── ErrorMessage.tsx # Error display
+├── pages/             # Route components
+│   ├── SearchPage.tsx # Main search interface
+│   └── DetailPage.tsx # Movie detail view
+├── hooks/             # Custom React hooks
+│   ├── useMovies.ts   # Movie operations hook
+│   └── useDebounce.ts # Search debouncing
+├── services/          # External API communication
+│   └── omdbApi.ts     # OMDB API service (Singleton)
+├── domain/            # Business logic layer
+│   └── movieService.ts # Movie domain operations
+├── context/           # State management
+│   └── AppContext.tsx # Global application state
+├── types/             # TypeScript definitions
+│   └── index.ts       # All type definitions
+└── App.tsx            # Main application component
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Installation & Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Quick Start (Demo Mode)
+For immediate testing, the app includes a fallback API key:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone <repository-url>
+cd omdb-movie-app
+npm install
+npm start
+```
 
-### `npm run eject`
+Navigate to: http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Professional Setup (Recommended)
+For production use or extended testing, get your own API key:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Get your free OMDB API Key**
+   - Visit: https://www.omdbapi.com/apikey.aspx
+   - Select "FREE! (1,000 daily limit)"
+   - Verify your email
+   - Copy your API key
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. **Configure Environment**
+   ```bash
+   # Create .env file in the project root
+   echo "REACT_APP_OMDB_API_KEY=your_actual_api_key_here" > .env
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. **Start Development**
+   ```bash
+   npm start
+   ```
 
-## Learn More
+### 🔑 API Key Options
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+| Option | Pros | Cons | Best For |
+|--------|------|------|----------|
+| **Your Own Key** | ✅ Full 1,000 daily requests<br/>✅ No shared limits<br/>✅ Production ready | ⏱️ 2 min setup | **Recommended for all users** |
+| **Demo Fallback** | ✅ Zero setup<br/>✅ Instant testing | ⚠️ Shared daily limits<br/>⚠️ May hit rate limits | **Quick demos only** |
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**💡 Pro Tip**: The free OMDB tier gives you 1,000 requests per day, which is plenty for development and testing.
+
+## 💻 Usage
+
+### Search Movies and Series
+- Enter a title in the search field (minimum 2 characters)
+- Select content type: All, Movies, or Series
+- Results appear automatically with debounced search
+
+### Navigation
+- Click any movie/series card to view detailed information
+- Use pagination to browse through results (3 pages maximum)
+- Responsive design adapts to your screen size
+
+### Features in Detail
+- **Auto-search**: Results update as you type (800ms delay)
+- **Image Quality**: Only high-quality posters are displayed
+- **Smart Grid**: Layout adapts based on number of results
+- **Error Recovery**: Retry failed requests automatically
+
+## 🏗️ Architecture
+
+### Clean Architecture Implementation
+
+**Presentation Layer** (`components/`, `pages/`)
+- React components with Material-UI
+- Responsive design and user interactions
+- Loading states and error handling
+
+**Application Layer** (`hooks/`, `context/`)
+- Custom hooks for business logic
+- State management with Context API
+- Data flow coordination
+
+**Domain Layer** (`domain/`)
+- Business rules and validation
+- Data transformation
+- Core application logic
+
+**Data Layer** (`services/`)
+- External API communication
+- Caching and retry mechanisms
+- Error handling and data mapping
+
+### State Management
+- **Context API** with `useReducer` for predictable state updates
+- **Custom hooks** to encapsulate business logic
+- **TypeScript** for complete type safety
+
+### Performance Optimizations
+- **Debounced Search**: Reduces API calls
+- **Image Filtering**: Improves visual quality
+- **Caching**: Prevents duplicate requests
+- **Memoized Components**: Optimizes re-renders
+
+## 🎨 Design System
+
+### Theme
+- **Dark Mode**: Modern dark theme with custom colors
+- **Color Palette**: Purple (#bb86fc) and cyan (#03dac6)
+- **Typography**: Roboto with custom weights
+- **Spacing**: Consistent 8px grid system
+
+### Components
+- **Glassmorphism**: Backdrop blur and transparency effects
+- **Smooth Animations**: CSS transitions and Material-UI animations
+- **Responsive Grid**: Adaptive layout for all screen sizes
+- **Loading States**: Consistent spinner and skeleton patterns
+
+## 🧪 Technical Highlights
+
+### TypeScript Implementation
+- Complete type coverage
+- Generic types for API responses
+- Strict type checking enabled
+- Interface-based architecture
+
+### API Integration
+- Singleton pattern for service instance
+- Intelligent caching system
+- Retry logic with exponential backoff
+- Comprehensive error handling
+
+### Custom Hooks
+- `useMovies`: Encapsulates all movie-related operations
+- `useDebounce`: Optimizes search performance
+- Separation of concerns
+- Reusable business logic
+
+### Responsive Design
+- Mobile-first approach
+- Adaptive grid system
+- Touch-friendly interactions
+- Optimized for all devices
+
+## 📱 Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+## 🔧 Available Scripts
+
+- `npm start` - Start development server
+- `npm test` - Run test suite
+- `npm run build` - Build for production
+- `npm run eject` - Eject from Create React App
+
+## 🚀 Deployment
+
+### Local Build
+```bash
+npm run build
+```
+
+### Netlify/Vercel Deployment
+1. Connect your GitHub repository
+2. Set build command: `npm run build`
+3. Set publish directory: `build`
+4. Add environment variable: `REACT_APP_OMDB_API_KEY`
+
+### Environment Variables for Production
+For deployment platforms, add:
+```
+REACT_APP_OMDB_API_KEY=your_production_api_key
+```
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+**Built with React, TypeScript, and Material-UI** | Clean Architecture Pattern
