@@ -1,7 +1,6 @@
 # Movie Search Application
 
 A modern React application for searching movies and TV series using the OMDB API. Built with TypeScript, Material-UI, and Clean Architecture principles.
-<img width="513" alt="Captura de pantalla 2025-07-04 a la(s) 12 38 14 a  m" src="https://github.com/user-attachments/assets/5d1dd715-bd39-4e47-9638-51b9601b867c" /><img width="508" alt="Captura de pantalla 2025-07-04 a la(s) 12 38 08 a  m" src="https://github.com/user-attachments/assets/767812e7-7b29-4f38-a5dd-2e1015636df7" /><img width="1061" alt="Captura de pantalla 2025-07-04 a la(s) 12 36 56 a  m" src="https://github.com/user-attachments/assets/c0eead50-2aa8-486d-a1f6-646c1dcca97f" /><img width="1428" alt="Captura de pantalla 2025-07-04 a la(s) 12 36 26 a  m" src="https://github.com/user-attachments/assets/06fe00b7-e56b-4aec-8932-7b3d8968faff" /><img width="1440" alt="Captura de pantalla 2025-07-04 a la(s) 12 36 08 a  m" src="https://github.com/user-attachments/assets/434c4ab8-a328-4f5e-8528-be02dd0e2746" />
 
 
 <img width="1440" alt="Captura de pantalla 2025-07-04 a la(s) 12 36 45 a  m" src="https://github.com/user-attachments/assets/7bb60f4f-01f3-47f8-8d04-165861c9018e" />
