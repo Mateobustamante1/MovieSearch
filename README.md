@@ -217,18 +217,6 @@ For production use or extended testing, get your own API key:
 - `npm run build` - Build for production
 - `npm run eject` - Eject from Create React App
 
-## 🚀 Deployment
-
-### Local Build
-```bash
-npm run build
-```
-
-### Netlify/Vercel Deployment
-1. Connect your GitHub repository
-2. Set build command: `npm run build`
-3. Set publish directory: `build`
-4. Add environment variable: `REACT_APP_OMDB_API_KEY`
 
 ### Environment Variables for Production
 For deployment platforms, add:
