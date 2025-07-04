@@ -5,7 +5,6 @@ A modern React application for searching movies and TV series using the OMDB API
 
 <img width="1440" alt="Captura de pantalla 2025-07-04 a la(s) 12 36 45 a  m" src="https://github.com/user-attachments/assets/7bb60f4f-01f3-47f8-8d04-165861c9018e" />
 
-<img width="462" alt="Captura de pantalla 2025-07-04 a la(s) 12 37 36 a  m" src="https://github.com/user-attachments/assets/d8685417-adf9-425d-b9b9-2049489e5f64" /><img width="906" alt="Captura de pantalla 2025-07-04 a la(s) 12 37 02 a  m" src="https://github.com/user-attachments/assets/ccefe30a-0df3-4473-8f0f-8c2f3564f16e" />
 
 <img width="475" alt="Captura de pantalla 2025-07-04 a la(s) 12 37 30 a  m" src="https://github.com/user-attachments/assets/ad1d65ec-365e-462f-9bf2-4b896a83c927" /><img width="1080" alt="Captura de pantalla 2025-07-04 a la(s) 12 37 10 a  m" src="https://github.com/user-attachments/assets/4d851b63-61f4-46d0-b579-564bb9f6f440" />
 
