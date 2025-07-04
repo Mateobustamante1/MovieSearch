@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Box, Button, Typography, Fade } from '@mui/material';
+import { Box, Button, Typography, Fade } from '@mui/material';
 import { Refresh as RefreshIcon, Error as ErrorIcon } from '@mui/icons-material';
 
 interface ErrorMessageProps {

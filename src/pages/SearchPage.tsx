@@ -20,7 +20,6 @@ export const SearchPage: React.FC = () => {
     searchFilters,
     totalResults,
     searchMovies,
-    clearMovies,
   } = useMovies();
 
   const handleSearch = useCallback(
